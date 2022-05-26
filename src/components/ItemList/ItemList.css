@@ -1,0 +1,19 @@
+.itemList{
+    background-color: #1f5996;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
