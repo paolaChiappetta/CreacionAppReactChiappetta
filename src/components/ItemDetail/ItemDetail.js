@@ -1,4 +1,5 @@
 import './ItemDetail.css';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({item}) => {
     let logo = (item.category === 1) ? 
@@ -10,6 +11,9 @@ const ItemDetail = ({item}) => {
         <div className='serviceDetail'>
             <div className='imgBox'>
                 <img src={logo} alt={item.name}/>
+                <div>
+                    <ItemCount className='itemCount' stock={item.stock} />
+                </div>
             </div>
             <div>
                 <h2>{item.name}</h2>
