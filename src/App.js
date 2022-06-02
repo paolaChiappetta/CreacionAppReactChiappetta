@@ -8,9 +8,10 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <><NavBar />
+    <>
     
     <BrowserRouter>
+    <NavBar />
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/services/:category' element={<FilterItemList />} />
