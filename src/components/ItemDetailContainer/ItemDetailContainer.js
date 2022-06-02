@@ -1,34 +1,24 @@
 import {useState, useEffect} from "react";
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import items from "../../utils/items";
+import { useParams, useNavigate } from 'react-router-dom'
 
 const ItemDetailContainer = ({title}) => {
+  const { id } = useParams()
+  const navigate = useNavigate()
   const [product, setProduct] = useState([]);
-  const item = 
-    {
-        "id": 1,
-        "category": 1,
-        "name": "Entrevista inicial",
-        "price": "1500",
-        "stock": 3,
-        "description": "Es el primer acercamiento hacia los candidatos, con el objetivo de conocer a la persona, cuáles son sus intereses, forma de ser, objetivos, expectativas, situación laboral actual y brindarle mayores detalles de la vacante a la que se está postulando" 
-    };
 
-  const getProduct = () => {
-    return new Promise( (resolve, reject) => {
-      setTimeout(() => {
-        resolve(item)
-      }, 2000)})
-  }
+  const item = items.find( (service) => {
+      return service.id == id
+  })
 
   useEffect(() => {
-    getProduct()
-    .then((response) => {
-      setProduct(response)
-    })
-    .catch((error) => {
-      console.log("Error al cargar datos")
-    })}, [])
+    if(item === undefined){
+      navigate('../../pages/NotFound.js')
+  }else {
+      setProduct(item)
+  }}, [id])
 
     return (
         <><h1 className="title">{title}</h1>
