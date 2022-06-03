@@ -39,7 +39,7 @@ const items =
     {
         "id": 5,
         "category": "tests",
-        "name": "Test de atención y concentración",
+        "name": "Test de concentración",
         "image": "test-concentración.jpg",
         "price": "4000",
         "stock": 3,

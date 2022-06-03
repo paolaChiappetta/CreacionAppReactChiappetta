@@ -29,6 +29,7 @@
 
 .addCartButton{
     border-radius: 20px;
+    border: none;
     background-color: #1f5996;
     color: #ffffff;
     font-weight: bold;

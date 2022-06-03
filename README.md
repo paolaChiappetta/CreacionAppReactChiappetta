@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Proyecto eCommerce - Sigma HR - Consultora de RRHH
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto realizado en el marco del curso de React.js de la plataforma educativa CoderHouse.
+El sitio está dedicado a la venta de servicios de la consultora de Recursos Humanos Sigma HR.
+
+# Getting Started 
 
 ## Available Scripts
 

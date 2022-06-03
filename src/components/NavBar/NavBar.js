@@ -11,16 +11,15 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} >
           <AppBar position="static">
-            <Toolbar>
+            <Toolbar className='navBarContainer'>
               <Logo/>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Sigma HR - Consultora de Recursos Humanos
-              </Typography>
-              <Button color="inherit"><Link to="/">Home</Link></Button>
-              <Button color="inherit">Nosotros</Button>
-              <Button color="inherit">Servicios</Button>
+              <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Home</Link></Button>
+              <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Nosotros</Link></Button>
+              <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/services/entrevistas">Entrevistas</Link></Button>
+              <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/services/tests">Tests</Link></Button>
+              <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/services/pruebas">Pruebas IT</Link></Button>
               <Cart/>
             </Toolbar>
           </AppBar>

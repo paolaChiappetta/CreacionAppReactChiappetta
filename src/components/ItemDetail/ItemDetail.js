@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
                     <ItemCount className='itemCount' stock={item.stock} />
                 </div>
             </div>
-            <div>
+            <div className='itemDetailBox'>
                 <h2>{item.name}</h2>
                 <h3>Valor $ {item.price}</h3>
                 <p>{item.description}</p>
