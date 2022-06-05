@@ -1,7 +1,7 @@
 import {useState} from "react";
 import './ItemCount.css'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, setShowFinishButton}) => {
     const[count, setCount] = useState(0);
 
     const addCount = () => {
@@ -19,6 +19,7 @@ const ItemCount = ({stock}) => {
     const onAdd = () => {
         if(count > 0){
             console.log(`Se han agregado ${count} unidades de este servicio`);
+            setShowFinishButton(true);
         }
     }
 
