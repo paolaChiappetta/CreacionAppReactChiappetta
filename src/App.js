@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home';
-import FilterItemList from './pages/ItemList';
+import FilterItemList from './pages/ItemListFiltered';
 import ItemDetail from './pages/ItemDetail';
 import NotFound from './pages/NotFound';
 
