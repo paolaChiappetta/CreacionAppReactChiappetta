@@ -1,11 +1,14 @@
-import {useState} from "react";
-import './ItemCount.css'
+import {useContext, useState} from "react";
+import './ItemCount.css';
+import CartContext from "../../context/CartContext";
 
-const ItemCount = ({stock, setShowFinishButton}) => {
+const ItemCount = ({setShowFinishButton, item}) => {
     const[count, setCount] = useState(0);
 
+    const {addItemToCart} = useContext(CartContext);
+
     const addCount = () => {
-        if(stock > count){
+        if(item.stock > count){
             setCount(count + 1);
         }
     }
@@ -18,7 +21,7 @@ const ItemCount = ({stock, setShowFinishButton}) => {
 
     const onAdd = () => {
         if(count > 0){
-            console.log(`Se han agregado ${count} unidades de este servicio`);
+            addItemToCart(item);
             setShowFinishButton(true);
         }
     }

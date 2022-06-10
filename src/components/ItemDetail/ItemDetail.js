@@ -12,9 +12,9 @@ const ItemDetail = ({item}) => {
                 <img src={`/${item.image}`} alt={item.name}/>
                 {!showFinishButton ?
                 <div>
-                    <ItemCount className='itemCount' 
-                    stock={item.stock} 
+                    <ItemCount className='itemCount'
                     setShowFinishButton={setShowFinishButton}
+                    item={item}
                     />
                 </div>
                 : 

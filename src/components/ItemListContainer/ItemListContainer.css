@@ -2,3 +2,8 @@
     text-align: center;
     color: #1f5996;
 }
+
+.itemList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
