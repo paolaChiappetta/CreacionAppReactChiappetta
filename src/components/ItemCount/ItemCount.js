@@ -21,7 +21,7 @@ const ItemCount = ({setShowFinishButton, item}) => {
 
     const onAdd = () => {
         if(count > 0){
-            addItemToCart(item);
+            addItemToCart(item, count);
             setShowFinishButton(true);
         }
     }

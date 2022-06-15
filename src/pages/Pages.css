@@ -4,6 +4,7 @@
 }
 
 .title{
+    margin: 20px 0px;
     text-align: center;
     color: #1f5996;
 }
@@ -14,18 +15,59 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.box
-{
+.cartTable{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cartTable thead, .cartTable tbody{
+    width: 100%;
+}
+
+.cartTable tr{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 0.5fr;
+}
+
+.cartColumns {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-left: 1px;
+    margin-right: 1px; 
+}
+
+.cartColumnsInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
     justify-content: center;
-    margin: 10px;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    width: 270px;
+    margin: 1px;
+}
+
+.cartTable td{
+    padding-top: 15px;
+}
+
+.finishBuyButton{
+    border-radius: 20px;
+    border: none;
+    background-color: #1f5996;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px; 
+    cursor: pointer;
+}
+
+.cartPriceContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
 }

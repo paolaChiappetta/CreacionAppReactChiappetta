@@ -1,0 +1,15 @@
+.bin {
+    width: 15px;
+    height: 15px; 
+}
+  
+.deleteButton {
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.serviceImg{
+    width: 170px;
+    height: 80px;
+}
