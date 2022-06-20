@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import './BuyerForm.css';
 import TextField from '@mui/material/TextField';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import db from "../../utils/firebaseConfig";
 import Success from "../Success/Success";
 
@@ -47,6 +47,17 @@ const BuyerForm = ({setViewBuyerForm}) => {
         setSuccessOrderNumber(orderDoc.id);
         clearAllFromCart();
         setSuccessState(true);
+        cartItems.map(item => {
+            return(
+                updateService(item)
+            )
+        })
+    }
+
+    const updateService = (item) => {
+        const units = item.stock - item.quantity;
+        const service = doc(db, "servicios", item.id);
+        updateDoc(service, {stock: units});
     }
 
     return (

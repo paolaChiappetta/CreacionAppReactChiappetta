@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from 'sweetalert2';
 
 const CartContext = createContext();
 
@@ -19,9 +20,21 @@ const CartProvider = ({children}) => {
             setCartItems(cartItems => [...cartItems, newItem]);
             setCartTotalPrice(cartTotalPrice + totalPrice);
             setCartTotalQuantity(cartTotalQuantity + quantity);
-            console.log("Servicio agregado al carrito");
+            Swal.fire({
+                title: 'Servicio agregado al carrito!',
+                text: 'Muchas gracias',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996'
+            })
         }else{
-            console.log("El servicio ya se encuentra en el carrito");
+            Swal.fire({
+                title: 'Su servicio ya se encuentra en el carrito!',
+                text: 'Diríjase allí para realizar cambios',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996'
+            })
         }
     }
 
@@ -46,6 +59,13 @@ const CartProvider = ({children}) => {
             setCartItems(cartItems);
             setCartTotalPrice(cartTotalPrice + cartItems[pos].price);
             setCartTotalQuantity(cartTotalQuantity + 1);
+        }else{
+            Swal.fire({
+                title: 'Haz alcanzado el límite de unidades para este servicio!',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996'
+            })
         }
     }
 

@@ -1,6 +1,7 @@
 import {useContext, useState} from "react";
 import './ItemCount.css';
 import CartContext from "../../context/CartContext";
+import Swal from 'sweetalert2';
 
 const ItemCount = ({setShowFinishButton, item}) => {
     const[count, setCount] = useState(0);
@@ -10,6 +11,14 @@ const ItemCount = ({setShowFinishButton, item}) => {
     const addCount = () => {
         if(item.stock > count){
             setCount(count + 1);
+        }else{
+            Swal.fire({
+                title: 'Lo lamentamos!',
+                text: 'No tenemos este servicio disponible momentáneamente',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996'
+            })
         }
     }
 
@@ -23,6 +32,14 @@ const ItemCount = ({setShowFinishButton, item}) => {
         if(count > 0){
             addItemToCart(item, count);
             setShowFinishButton(true);
+        }else{
+            Swal.fire({
+                title: 'Debe ingresar una unidad mayor a 0.',
+                text: 'Muchas gracias!',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996'
+            })
         }
     }
 
