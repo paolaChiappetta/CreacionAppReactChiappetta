@@ -6,28 +6,16 @@ import icon from './cesto.png';
 const CartItem = ({item}) => {
     const[count, setCount] = useState(0);
 
-    const {removeItemFromCart} = useContext(CartContext);
-    
-    const addCount = () => {
-        if(item.stock > count){
-            setCount(count + 1);
-        }
-    }
-
-    const removeCount = () => {
-        if(count > 0){
-            setCount(count - 1);
-        }
-    }
+    const {removeItemFromCart, addQuantity, removeQuantity} = useContext(CartContext);
 
     return (
         <tr className='service'>
             <td className='cartColumnsInfo'><img className='serviceImg' src={`/${item.image}`} alt={item.name}/></td>
             <td className='cartColumnsInfo'><h4 className='itemName'>{item.name}</h4></td>
             <td className='cartColumnsInfo'><div className="itemCount">
-                <button className="sizeButton" onClick={removeCount}>-</button>
+                <button className="sizeButton" onClick={() => removeQuantity(item)}>-</button>
                 <p>{item.quantity}</p>
-                <button className="sizeButton" onClick={addCount}>+</button>
+                <button className="sizeButton" onClick={() => addQuantity(item)}>+</button>
             </div></td>
             <td className='cartColumnsInfo'><p className='itemPrice'>$ {item.total}</p><br/></td>
             <td className='cartColumnsInfo'><div>

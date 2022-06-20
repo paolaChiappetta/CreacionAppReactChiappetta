@@ -32,12 +32,46 @@ const CartProvider = ({children}) => {
         setCartTotalQuantity(cartTotalQuantity - item.quantity);
     }
 
+    const clearAllFromCart = () => {
+        setCartItems([]);
+        setCartTotalPrice(0);
+        setCartTotalQuantity(0);
+    }
+
+    const addQuantity = (item) => {
+        let pos = cartItems.findIndex((serv) => serv.id === item.id);
+        if(cartItems[pos].stock > cartItems[pos].quantity){
+            cartItems[pos].quantity = cartItems[pos].quantity + 1;
+            cartItems[pos].total = cartItems[pos].total + cartItems[pos].price;
+            setCartItems(cartItems);
+            setCartTotalPrice(cartTotalPrice + cartItems[pos].price);
+            setCartTotalQuantity(cartTotalQuantity + 1);
+        }
+    }
+
+    const removeQuantity = (item) => {
+        let pos = cartItems.findIndex((serv) => serv.id === item.id);
+        console.log(cartItems, pos);
+        if(cartItems[pos].quantity > 1){
+            cartItems[pos].quantity = cartItems[pos].quantity - 1;
+            cartItems[pos].total = cartItems[pos].total - cartItems[pos].price;
+            setCartItems(cartItems);
+            setCartTotalPrice(cartTotalPrice - cartItems[pos].price);
+            setCartTotalQuantity(cartTotalQuantity - 1);
+        }else{
+            removeItemFromCart(item);
+        }
+    }
+
     const data = {
         cartItems,
         cartTotalPrice,
         cartTotalQuantity,
         addItemToCart,
-        removeItemFromCart
+        removeItemFromCart,
+        clearAllFromCart,
+        addQuantity,
+        removeQuantity
     };
 
     return (

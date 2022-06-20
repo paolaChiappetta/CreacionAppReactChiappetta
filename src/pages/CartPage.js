@@ -1,13 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
 import './Pages.css';
 import CartItem from "../components/CartItem/CartItem";
+import BuyerForm from "../components/BuyerForm/BuyerForm";
 import { Link } from 'react-router-dom';
 
 const CartPage = () => {
     const {cartItems, cartTotalPrice, cartTotalQuantity} = useContext(CartContext);
+    const [viewBuyerForm, setViewBuyerForm] = useState(false);
+    
     return (
         <div>
+            {!viewBuyerForm ?
+            <>
             <h1 className='title'>Carrito</h1>
             {cartTotalQuantity > 0 ?
             <>
@@ -35,14 +40,20 @@ const CartPage = () => {
             <div className="cartPriceContainer">
                 <h4>Cantidad de servicios: {cartTotalQuantity}</h4>
                 <h3>Total: $ {cartTotalPrice}</h3>
-                <button className="finishBuyButton">Finalizar contratación</button>
+                <button className="finishBuyButton" onClick={() => {setViewBuyerForm(true)}}>Finalizar contratación</button>
             </div>
             </>
             :
             <div className="cartPriceContainer">
             <h3>No tienes servicios cargados</h3>
-            <button className="finishBuyButton"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Volver al inicio</Link></button>
+            <button className="backHomeButton"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Volver al inicio</Link></button>
             </div>}
+            </>
+            :
+            <>
+            <BuyerForm
+            setViewBuyerForm={setViewBuyerForm}/>
+            </>}
         </div>
     )
 }
