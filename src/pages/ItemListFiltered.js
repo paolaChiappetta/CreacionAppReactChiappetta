@@ -34,8 +34,11 @@ const FilterItemList = () => {
         return items.filter((product) => product.category === category)
     }
 
+    const categoryTitle = category.toUpperCase();
+    
     return (
-        <><h1 className="title">Contratá nuestros servicios - {category}</h1>
+        <><h1 className="title">Contratá nuestros servicios</h1>
+        <h2 className="subtitle">{categoryTitle}</h2>
         <div className='itemList'>
           <ItemList items={products} />
         </div>
