@@ -10,6 +10,11 @@ const ItemDetail = ({item}) => {
         <div className='serviceDetail'>
             <div className='imgBox'>
                 <img src={`/${item.image}`} alt={item.name}/>
+            </div>
+            <div className='itemDetailBox'>
+                <h2>{item.name}</h2>
+                <h3>Valor $ {item.price}</h3>
+                <p>{item.description}</p>
                 {!showFinishButton ?
                 <div>
                     <ItemCount className='itemCount'
@@ -21,11 +26,6 @@ const ItemDetail = ({item}) => {
                 <div>
                     <button className='finishButton'><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/cart">Finalizar contratación</Link></button>
                 </div>}
-            </div>
-            <div className='itemDetailBox'>
-                <h2>{item.name}</h2>
-                <h3>Valor $ {item.price}</h3>
-                <p>{item.description}</p>
             </div>
             
         </div>

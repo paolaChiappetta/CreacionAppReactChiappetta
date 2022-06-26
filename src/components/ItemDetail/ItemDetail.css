@@ -1,13 +1,9 @@
 .serviceDetail{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     margin: 20px;
     border-color: black;
     border-width: 1px;
     border-style: solid;
-    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    width: 600px;
 }
 
 .serviceDetail img{
@@ -21,6 +17,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 10px;
 }
 
 .itemCount{
@@ -30,6 +27,7 @@
 .itemDetailBox{
     margin-left: 15px;
     margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 .finishButton{
@@ -41,4 +39,62 @@
     margin-top: 20px;
     padding: 5px; 
     cursor: pointer;
+}
+
+.itemDetailBox h2{
+    color: #1f5996;
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 480px) {
+    .serviceDetail{
+        
+        width: 450px;
+    }
+
+    .serviceDetail img{
+        width: 400px;
+        height: 280px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .serviceDetail{
+        
+        width: 500px;
+    }
+
+    .serviceDetail img{
+        width: 450px;
+        height: 320px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .serviceDetail{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 5px;
+        width: 800px;
+    }
+
+    .serviceDetail img{
+        width: 400px;
+        height: 280px;
+        border-radius: 5px;
+    }
+
+    .itemDetailBox h2{
+        font-size: 30px;
+    }
+
+    .itemDetailBox h3{
+        font-size: 20px;
+    }
+
+    .itemDetailBox p{
+        font-size: 20px;
+    }
 }
