@@ -19,11 +19,11 @@ const CartPage = () => {
             <table className='cartTable'>
                 <thead>
                     <tr>
-                        <th className='cartColumns'>Servicio</th>
-                        <th className='cartColumns'>Descripción</th>
-                        <th className='cartColumns'>Cantidad</th>
-                        <th className='cartColumns'>Precio</th>
-                        <th className='cartColumns'>Borrar</th>
+                        <th className='cartColumns serviceImgAndDescription'>Servicio</th>
+                        <th className='cartColumns serviceImgAndDescription'>Descripción</th>
+                        <th className='cartColumns cantCol'>Cantidad</th>
+                        <th className='cartColumns priceCol'>Precio</th>
+                        <th className='cartColumns deleteCol'>Borrar</th>
                     </tr>
                 </thead>
                 <tbody>

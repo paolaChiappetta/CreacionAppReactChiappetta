@@ -9,12 +9,6 @@
     text-align: center;
     color: #1f5996;
 }
-/*
-.itemList{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}*/
 
 .cartTable{
     width: 100%;
@@ -71,4 +65,102 @@
     align-items: center;
     text-align: center;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 400px) {
+    .cartColumns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .cartTable tr{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 0.5fr;
+        grid-template-columns: 1.5fr 1.5fr 1.5fr 1fr 0.5fr;
+    }
+
+    .cartTable td{
+        padding-top: 0px;
+    }
+
+    .serviceImgAndDescription{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin: 0px;
+    }
+
+    .serviceDetailsCant{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .serviceDetailsPrice{
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .serviceDetailsDelete{
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .cantCol{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .priceCol{
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .deleteCol{
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .cartColumns {
+        font-size: 10px;
+    }
+
+    .cartColumnsInfo {
+        font-size: 10px;
+    }
+
+    .service{
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cartTable tr{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1.5fr 1.5fr 1.5fr 1fr 0.5fr;
+    }
+
+    .cartColumns {
+        font-size: 10px;
+    }
+
+    .cartColumnsInfo {
+        font-size: 10px;
+    }
 }
