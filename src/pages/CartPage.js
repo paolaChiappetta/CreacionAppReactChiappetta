@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
-import './Pages.css';
+import './CartPage.css';
 import CartItem from "../components/CartItem/CartItem";
 import BuyerForm from "../components/BuyerForm/BuyerForm";
 import { Link } from 'react-router-dom';
