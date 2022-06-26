@@ -4,7 +4,7 @@ import draw from './sobre-nosotros.jpg'
 const AboutUs = () => {
     return(
         <main>
-            <h2 class="title">Sobre nosotros...</h2>
+            <h1 class="title">Sobre nosotros...</h1>
             <section class="aboutUsContainer">
                 <img src={draw} class="aboutUsDraw" alt=""/>
                 <p>

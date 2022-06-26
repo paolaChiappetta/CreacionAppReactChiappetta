@@ -5,6 +5,8 @@
     align-items: center;
     text-align: center;
     align-items: center;
+    margin-left: 10px;  
+    margin-right: 10px;
 }
 
 .aboutUsContainer p, .aboutUsContainer h3{
