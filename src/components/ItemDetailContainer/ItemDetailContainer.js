@@ -1,13 +1,12 @@
 import {useState, useEffect} from "react";
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { doc, getDoc } from "firebase/firestore";
 import db from "../../utils/firebaseConfig";
 
 const ItemDetailContainer = ({title}) => {
   const { id } = useParams()
-  const navigate = useNavigate()
   const [product, setProduct] = useState([]);
 
   const getProduct = async () => {

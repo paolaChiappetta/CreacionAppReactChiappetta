@@ -6,6 +6,7 @@ import FilterItemList from './pages/ItemListFiltered';
 import ItemDetail from './pages/ItemDetail';
 import NotFound from './pages/NotFound';
 import CartPage from './pages/CartPage';
+import Footer from './components/Footer/Footer';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/cart' element={<CartPage/>} />
             <Route path='*' element={<NotFound />}/> 
         </Routes>
+      <Footer/>  
       </BrowserRouter>
     </CartProvider>
     </>
