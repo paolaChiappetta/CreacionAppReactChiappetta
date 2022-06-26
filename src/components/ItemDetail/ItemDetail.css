@@ -55,7 +55,6 @@
     .serviceDetail img{
         width: 400px;
         height: 280px;
-        border-radius: 5px;
     }
 }
 
@@ -68,7 +67,6 @@
     .serviceDetail img{
         width: 450px;
         height: 320px;
-        border-radius: 5px;
     }
 }
 
@@ -76,7 +74,6 @@
     .serviceDetail{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        border-radius: 5px;
         width: 800px;
     }
 

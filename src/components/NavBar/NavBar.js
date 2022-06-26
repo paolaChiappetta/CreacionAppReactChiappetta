@@ -18,7 +18,7 @@ const NavBar = () => {
                 <li><Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Home</Link></Button></li>
             </section>
             <section className='navItem'>
-                <li><Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Nosotros</Link></Button></li>
+                <li><Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/aboutUs">Nosotros</Link></Button></li>
             </section>
             <section className='navItem'>
                 <li><Button color="inherit"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/services/entrevistas">Entrevistas</Link></Button></li>
