@@ -4,9 +4,9 @@ import draw from './sobre-nosotros.jpg'
 const AboutUs = () => {
     return(
         <main>
-            <h1 class="title">Sobre nosotros...</h1>
-            <section class="aboutUsContainer">
-                <img src={draw} class="aboutUsDraw" alt=""/>
+            <h1 className="title">Sobre nosotros...</h1>
+            <section className="aboutUsContainer">
+                <img src={draw} className="aboutUsDraw" alt=""/>
                 <p>
                 Somos una empresa joven, decidida y apasionada por los desafíos. 
                 Nos especializamos en la búsqueda de colaboradores de alto rendimiento y 

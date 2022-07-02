@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import db from "../../utils/firebaseConfig";
 import Success from "../Success/Success";
+import validator from 'validator';
+import Swal from 'sweetalert2';
 
 const BuyerForm = ({setViewBuyerForm}) => {
     const {cartItems, cartTotalPrice, clearAllFromCart} = useContext(CartContext);
@@ -30,6 +32,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
     })
     const [successState, setSuccessState] = useState(false);
     const [successOrderNumber, setSuccessOrderNumber] = useState('');
+    const [emailError, setEmailError] = useState(" ");
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -41,17 +44,64 @@ const BuyerForm = ({setViewBuyerForm}) => {
         setFormValue({...formValue, [e.target.name]: e.target.value});
     }
 
+    const dateValidations = () => {
+        let validaton = false;
+        if(formValue.date.length === 7){
+            let today = new Date();
+            let month = parseInt(formValue.date[0] + formValue.date[1]);
+            let year = parseInt(formValue.date[3] + formValue.date[4] + formValue.date[5] + formValue.date[6]);
+            if(year >= today.getFullYear()){
+                if(month > (today.getMonth() + 1) && month < 12)
+                validaton = true;
+            }
+        }
+        return validaton;
+    }
+
     const saveData = async (newOrder) => {
-        const orderFirebase = collection(db, 'ordenes');
-        const orderDoc = await addDoc(orderFirebase, newOrder);
-        setSuccessOrderNumber(orderDoc.id);
-        clearAllFromCart();
-        setSuccessState(true);
-        cartItems.map(item => {
-            return(
-                updateService(item)
-            )
-        })
+        const emailValidation = validator.isEmail(formValue.email);
+        const cardValidation = formValue.card.length === 16 ? true : false;
+        const dateValidation = dateValidations();
+        
+        let errors = '';
+
+        if(!emailValidation){
+            errors = "email"
+        }
+        
+        if(!cardValidation){
+            if(errors !== ''){
+                errors+=' - datos de la tarjeta'
+            }
+        }
+
+        if(!dateValidation){
+            if(errors !== ''){
+                errors+=' - fecha'
+            }
+        }
+
+        if(errors !== ''){
+            Swal.fire({
+                title: 'Datos inválidos!',
+                text: `Verifique: ${errors}`,
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996',
+                width:'300px'
+            })
+        }else{
+            const orderFirebase = collection(db, 'ordenes');
+            const orderDoc = await addDoc(orderFirebase, newOrder);
+            setSuccessOrderNumber(orderDoc.id);
+            clearAllFromCart();
+            setSuccessState(true);
+            cartItems.map(item => {
+                return(
+                    updateService(item)
+                )
+            })
+        }
     }
 
     const updateService = (item) => {
@@ -77,6 +127,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
                             value={formValue.name}
                             onChange={handleChange}
                         />
+                        
                         <TextField 
                             className="formInput"
                             id="outlined-basic" 
@@ -91,7 +142,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
                             className="formInput"
                             id="outlined-basic" 
                             name="email"
-                            label="Mail" 
+                            label="Mail"
                             required={true}
                             value={formValue.email}
                             variant="outlined" 
@@ -121,7 +172,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
                             className="formInput"
                             id="outlined-basic" 
                             name="date"
-                            label="Fecha de vencimiento (mm/aa)" 
+                            label="Fecha de vencimiento (mm/aaaa)" 
                             required={true}
                             value={formValue.date}
                             variant="outlined" 

@@ -10,7 +10,7 @@ const NavBar = () => {
     <>
       <section>
         <nav>
-          <ul class="navListContainer">
+          <ul className="navListContainer">
             <section className='logo'>
                 <li><Logo/></li>
             </section>

@@ -9,12 +9,19 @@ const ItemCount = ({setShowFinishButton, item}) => {
     const {addItemToCart} = useContext(CartContext);
 
     const addCount = () => {
-        if(item.stock > count){
-            setCount(count + 1);
-        }else{
+        if(item.stock === 0){
             Swal.fire({
                 title: 'Lo lamentamos!',
                 text: 'No tenemos este servicio disponible momentáneamente',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996'
+            })
+        } else if(item.stock > count){
+            setCount(count + 1);
+        }else{
+            Swal.fire({
+                title: 'Haz alcanzado el límite de unidades para este servicio!',
                 icon: 'info',
                 confirmButtonText: 'OK',
                 confirmButtonColor:'#1f5996'

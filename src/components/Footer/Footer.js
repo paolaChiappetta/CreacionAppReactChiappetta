@@ -13,12 +13,12 @@ const Footer = () => {
             <div className='startLineFooter'></div> 
             <section> 
             <footer>
-                <section class="footerGrid">
+                <section className="footerGrid">
                     <section className='footerSection'>
                         <h3>Seguinos en las redes:</h3>
-                        <ul class="footerListContainer">
+                        <ul className="footerListContainer">
                             <div></div>
-                            <div class="footerDivContainer">
+                            <div className="footerDivContainer">
                                 <li><a href={linkedinUrl} target='_blanc'><FontAwesomeIcon icon={faLinkedin} className='socialMediaIcons'/></a></li>
                                 <li><a href={facebookUrl} target='_blanc'><FontAwesomeIcon icon={faFacebook} className='socialMediaIcons'/></a></li>
                                 <li><a href={instagramUrl} target='_blanc'><FontAwesomeIcon icon={faInstagram} className='socialMediaIcons'/></a></li>
