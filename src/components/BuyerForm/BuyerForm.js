@@ -64,6 +64,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
 
     const saveData = async (newOrder) => {
         const emailValidation = validator.isEmail(formValue.email);
+        const dniValidation = formValue.dni.length > 5 ? true : false;
         const cardValidation = formValue.card.length === 16 ? true : false;
         const dateValidation = dateValidations();
         
@@ -76,16 +77,28 @@ const BuyerForm = ({setViewBuyerForm}) => {
                 errors = "confirmación de email"
             }
         }
+
+        if(!dniValidation){
+            if(errors !== ''){
+                errors+= ' - DNI';
+            }else{
+                errors= 'DNI';
+            }
+        }
         
         if(!cardValidation){
             if(errors !== ''){
-                errors+=' - datos de la tarjeta'
+                errors+= ' - datos de la tarjeta';
+            }else{
+                errors= 'datos de la tarjeta';
             }
         }
 
         if(!dateValidation){
             if(errors !== ''){
-                errors+=' - fecha'
+                errors+= ' - fecha';
+            }else{
+                errors= 'fecha';
             }
         }
 
