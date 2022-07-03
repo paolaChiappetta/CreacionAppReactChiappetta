@@ -49,14 +49,16 @@ const BuyerForm = ({setViewBuyerForm}) => {
 
     const dateValidations = () => {
         let validaton = false;
-        if(formValue.date.length === 7){
+        if(formValue.date.length === 5 && formValue.date[2] === '/'){
             let today = new Date();
             let month = parseInt(formValue.date[0] + formValue.date[1]);
-            let year = parseInt(formValue.date[3] + formValue.date[4] + formValue.date[5] + formValue.date[6]);
-            if(year > today.getFullYear() && month > 0 && month <= 12){
+            let year = parseInt(formValue.date[3] + formValue.date[4]);
+            let actualYear = parseInt(today.getFullYear().toString()[2] + today.getFullYear().toString()[3]);
+            let actualMonth = today.getMonth() + 1;
+            if(year > actualYear && month > 0 && month <= 12){
                 validaton = true;
-            }else if(year === today.getFullYear()){
-                if(month > (today.getMonth() + 1) && month <= 12){
+            }else if(year === actualYear){
+                if(month > actualMonth && month <= 12){
                     validaton = true;
                 }
             }
@@ -200,7 +202,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
                             className="formInput"
                             id="outlined-basic" 
                             name="card"
-                            label="Número de la tarjeta" 
+                            label="Número de la tarjeta (sin espacios)" 
                             required={true}
                             value={formValue.card}
                             variant="outlined" 
@@ -211,7 +213,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
                             className="formInput"
                             id="outlined-basic" 
                             name="date"
-                            label="Fecha de vencimiento (mm/aaaa)" 
+                            label="Fecha de vencimiento (mm/aa)" 
                             required={true}
                             value={formValue.date}
                             variant="outlined" 

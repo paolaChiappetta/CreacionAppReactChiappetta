@@ -29,10 +29,7 @@ const FilterItemList = () => {
       const filteredItems = filterByCategory(services, category);
       setProducts(filteredItems);
       setIsLoading(false);
-    })
-    .catch((error) => {
-      console.log("Error al cargar datos")
-  })}, [category])
+    })}, [category])
 
     const filterByCategory = (items, category) => {
         return items.filter((product) => product.category === category)

@@ -6,8 +6,9 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     const linkedinUrl = 'https://www.linkedin.com/in/emiliano-cabrera/';
-    const facebookUrl = 'https://www.instagram.com/emi.cabrera23/';
-    const instagramUrl = 'https://www.facebook.com/emii.cabrera023';
+    const facebookUrl = 'https://www.facebook.com/emii.cabrera023/';
+    const instagramUrl = 'https://www.instagram.com/emi.cabrera23/';
+
     return(
         <div className='footerContainer'>
             <div className='startLineFooter'></div> 
@@ -37,7 +38,7 @@ const Footer = () => {
                     </section>
                 </section>
                 <div className='endLineFooter'></div>     
-                <h4>©Sigma. Todos los derechos reservados.</h4>
+                <h4>©SigmaHR. Todos los derechos reservados.</h4>
             </footer>
         </section>
     </div>

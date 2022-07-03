@@ -86,7 +86,6 @@ const CartProvider = ({children}) => {
 
     const removeQuantity = (item) => {
         let pos = cartItems.findIndex((serv) => serv.id === item.id);
-        console.log(cartItems, pos);
         if(cartItems[pos].quantity > 1){
             cartItems[pos].quantity = cartItems[pos].quantity - 1;
             cartItems[pos].total = cartItems[pos].total - cartItems[pos].price;
