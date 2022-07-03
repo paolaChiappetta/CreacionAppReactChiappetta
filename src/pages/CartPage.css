@@ -51,6 +51,10 @@
     margin-bottom: 180px;
 }
 
+.finishBuyButton{
+    margin-bottom: 25px;
+}
+
 .cartPriceContainer{
     display: flex;
     flex-direction: column;

@@ -27,10 +27,13 @@
     align-items: center;
     text-align: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .backToCartButton{
  padding: 5px;
+ margin-top: 15px;
+ margin-bottom: 22px;
 }
 
 .title{

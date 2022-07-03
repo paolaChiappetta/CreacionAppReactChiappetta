@@ -16,8 +16,8 @@ https://sigmarecursoshumanos.netlify.app/
 Material UI:
 Se utiliza para incorporar determinados componentes ahorrando tiempo en su diseño y estilo.
 
-Sweet Alert:
+Sweet Alert 2:
 Se utiliza para enviar mensajes al usuario de forma clara y con un buen diseño.
 
 Validator:
-Se utiliza para realizar validaciones en el formulario para finzalizar la contratación de servicios.
+Se utiliza para realizar validaciones en el formulario para finalizar la contratación de servicios.
