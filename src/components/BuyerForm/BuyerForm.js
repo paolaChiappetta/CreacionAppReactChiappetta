@@ -7,9 +7,11 @@ import db from "../../utils/firebaseConfig";
 import Success from "../Success/Success";
 import validator from 'validator';
 import Swal from 'sweetalert2';
+import Loading from "../Loading/Loading";
 
 const BuyerForm = ({setViewBuyerForm}) => {
     const {cartItems, cartTotalPrice, clearAllFromCart} = useContext(CartContext);
+    const [isLoading, setIsLoading] = useState(false);
     const [formValue, setFormValue] = useState({
         name: '',
         lastName: '',
@@ -71,35 +73,23 @@ const BuyerForm = ({setViewBuyerForm}) => {
         let errors = '';
 
         if(!emailValidation){
-            errors = "email"
+            errors = " - Email"
         }else{
             if(formValue.email !== formValue.emailConfirm){
-                errors = "confirmación de email"
+                errors = " - Confirmación de email"
             }
         }
 
         if(!dniValidation){
-            if(errors !== ''){
-                errors+= ' - DNI';
-            }else{
-                errors= 'DNI';
-            }
+            errors+= ' - DNI';
         }
         
         if(!cardValidation){
-            if(errors !== ''){
-                errors+= ' - datos de la tarjeta';
-            }else{
-                errors= 'datos de la tarjeta';
-            }
+            errors+= ' - Datos de la tarjeta';
         }
 
         if(!dateValidation){
-            if(errors !== ''){
-                errors+= ' - fecha';
-            }else{
-                errors= 'fecha';
-            }
+            errors+= ' - Fecha de vencimiento';
         }
 
         if(errors !== ''){
@@ -112,10 +102,12 @@ const BuyerForm = ({setViewBuyerForm}) => {
                 width:'320px'
             })
         }else{
+            setIsLoading(true);
             const orderFirebase = collection(db, 'ordenes');
             const orderDoc = await addDoc(orderFirebase, newOrder);
             setSuccessOrderNumber(orderDoc.id);
             clearAllFromCart();
+            setIsLoading(false);
             setSuccessState(true);
             cartItems.map(item => {
                 return(
@@ -234,8 +226,12 @@ const BuyerForm = ({setViewBuyerForm}) => {
                 <button className="backToCartButton" onClick={() => {setViewBuyerForm(false)}}>Volver al carrito</button>
             </div>
             </> :
+            !isLoading ? 
             <>
                 <Success order={successOrderNumber}/>
+            </> :
+            <>
+            <Loading/>
             </>}
         </div>
     )
