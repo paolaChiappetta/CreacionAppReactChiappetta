@@ -28,7 +28,8 @@ const CartProvider = ({children}) => {
                 text: 'Muchas gracias',
                 icon: 'success',
                 confirmButtonText: 'OK',
-                confirmButtonColor:'#1f5996'
+                confirmButtonColor:'#1f5996',
+                width: '320px'
             })
         }else{
             Swal.fire({
@@ -36,7 +37,8 @@ const CartProvider = ({children}) => {
                 text: 'Diríjase allí para realizar cambios',
                 icon: 'error',
                 confirmButtonText: 'OK',
-                confirmButtonColor:'#1f5996'
+                confirmButtonColor:'#1f5996',
+                width: '320px'
             })
         }
     }
@@ -76,7 +78,8 @@ const CartProvider = ({children}) => {
                 title: 'Haz alcanzado el límite de unidades para este servicio!',
                 icon: 'info',
                 confirmButtonText: 'OK',
-                confirmButtonColor:'#1f5996'
+                confirmButtonColor:'#1f5996',
+                width: '320px'
             })
         }
     }

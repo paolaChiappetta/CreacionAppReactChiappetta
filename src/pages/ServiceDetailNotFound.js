@@ -2,11 +2,11 @@ import ItemListContainer from '../components/ItemListContainer/ItemListContainer
 import './Pages.css';
 import { Link } from 'react-router-dom';
 
-const NotFound = () => {
+const ServiceDetailNotFound = () => {
     return (
     <>
     <div className='title'>
-        <h1 className='notFoundMessage'>Página no encontrada</h1>
+        <h1 className='notFoundMessage'>El servicio no existe</h1>
         <button className="backHomeButtonNotFound"><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/">Volver al inicio</Link></button>
     </div>
     <div className='itemListContainer'>
@@ -15,4 +15,4 @@ const NotFound = () => {
     )
 }
 
-export default NotFound
+export default ServiceDetailNotFound

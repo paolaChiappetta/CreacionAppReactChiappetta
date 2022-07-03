@@ -15,7 +15,8 @@ const ItemCount = ({setShowFinishButton, item}) => {
                 text: 'No tenemos este servicio disponible momentáneamente',
                 icon: 'info',
                 confirmButtonText: 'OK',
-                confirmButtonColor:'#1f5996'
+                confirmButtonColor:'#1f5996',
+                width: '320px'
             })
         } else if(item.stock > count){
             setCount(count + 1);
@@ -24,7 +25,8 @@ const ItemCount = ({setShowFinishButton, item}) => {
                 title: 'Haz alcanzado el límite de unidades para este servicio!',
                 icon: 'info',
                 confirmButtonText: 'OK',
-                confirmButtonColor:'#1f5996'
+                confirmButtonColor:'#1f5996',
+                width: '320px'
             })
         }
     }
@@ -45,7 +47,8 @@ const ItemCount = ({setShowFinishButton, item}) => {
                 text: 'Muchas gracias!',
                 icon: 'info',
                 confirmButtonText: 'OK',
-                confirmButtonColor:'#1f5996'
+                confirmButtonColor:'#1f5996',
+                width: '320px'
             })
         }
     }

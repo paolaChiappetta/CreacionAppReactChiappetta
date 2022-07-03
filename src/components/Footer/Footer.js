@@ -33,7 +33,7 @@ const Footer = () => {
                         <p>Gascón 2330, Mar del Plata, Bs As, Argentina</p>
                     </section>
                     <section className='footerSection'>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.7003587907475!2d-57.551819884325624!3d-38.00744907971775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc1ee3c4e803%3A0x22a95817bdce3422!2sFMV%2C%20Gasc%C3%B3n%202330%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1646590430983!5m2!1ses-419!2sar" width="350" height="150" style={{border:0}} allowfullscreen="" loading="lazy" title='iframe'></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.7003587907475!2d-57.551819884325624!3d-38.00744907971775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc1ee3c4e803%3A0x22a95817bdce3422!2sFMV%2C%20Gasc%C3%B3n%202330%2C%20B7600%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1646590430983!5m2!1ses-419!2sar" width="300" height="150" style={{border:0}} loading="lazy" title='iframe'></iframe>
                     </section>
                 </section>
                 <div className='endLineFooter'></div>     

@@ -9,6 +9,7 @@ import CartPage from './pages/CartPage';
 import Footer from './components/Footer/Footer';
 import AboutUs from './pages/AboutUs';
 import { CartProvider } from './context/CartContext';
+import ServiceDetailNotFound from './pages/ServiceDetailNotFound';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/cart' element={<CartPage/>} />
             <Route path='/aboutUs' element={<AboutUs />}/> 
             <Route path='*' element={<NotFound />}/> 
+            <Route path='/ServiceNotFound' element={<ServiceDetailNotFound />}/> 
         </Routes>
       <Footer/>  
       </BrowserRouter>

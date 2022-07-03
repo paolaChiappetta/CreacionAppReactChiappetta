@@ -10,6 +10,23 @@
     color: #1f5996;
 }
 
+.notFoundMessage{
+    padding-top: 70px;
+    padding-bottom: 15px;
+}
+
+.backHomeButtonNotFound{
+    border-radius: 20px;
+    border: none;
+    background-color: #1f5996;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px; 
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
 
 
 

@@ -156,7 +156,7 @@ const BuyerForm = ({setViewBuyerForm}) => {
                             label="Apellido" 
                             required={true}
                             variant="outlined" 
-                            value={formValue.name}
+                            value={formValue.lastName}
                             onChange={handleChange}
                         />
 
