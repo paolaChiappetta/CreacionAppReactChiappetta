@@ -38,14 +38,23 @@ const ItemCount = ({setShowFinishButton, item}) => {
     }
 
     const onAdd = () => {
-        if(count > 0){
+        if(item.stock === 0){
+            Swal.fire({
+                title: 'Lo lamentamos!',
+                text: 'No tenemos este servicio disponible momentáneamente',
+                icon: 'info',
+                confirmButtonText: 'OK',
+                confirmButtonColor:'#1f5996',
+                width: '320px'
+            })
+        }else if(count > 0){
             addItemToCart(item, count);
             setShowFinishButton(true);
         }else{
             Swal.fire({
-                title: 'Debe ingresar una unidad mayor a 0.',
-                text: 'Muchas gracias!',
-                icon: 'info',
+                title: 'Ups!',
+                text: 'Debe ingresar una unidad mayor a 0!',
+                icon: 'warning',
                 confirmButtonText: 'OK',
                 confirmButtonColor:'#1f5996',
                 width: '320px'

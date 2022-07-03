@@ -23,7 +23,7 @@ const ItemDetail = ({item}) => {
                     />
                 </div>
                 : 
-                <div>
+                <div className='finishButtonContainer'>
                     <button className='finishButton'><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/cart">Finalizar contratación</Link></button>
                 </div>}
             </div>
